@@ -1,10 +1,8 @@
 from scapy.all import load_layer, sniff
 from scapy.layers.tls.handshake import TLSClientHello
 
-
 # TLS 관련 레이어를 로드하여 Scapy에서 TLS 패킷을 인식할 수 있도록 설정
 load_layer("tls")
-
 
 # 패킷에서 SNI 정보를 추출하는 함수 정의
 def extract_sni(packet):
