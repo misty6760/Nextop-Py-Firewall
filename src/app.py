@@ -22,7 +22,7 @@ class App:
         asyncio.create_task(ui.run_async())
 
         await ui.mounted.wait()
-        scapy = ScapyInterceptor(logger)
+        scapy = ScapyInterceptor(logger, policy)
         scapy.start()
 
         # Mitmproxy 인터셉터 시작 (Scapy와 동일한 방식)

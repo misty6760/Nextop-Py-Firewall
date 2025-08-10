@@ -4,12 +4,12 @@ from mitmproxy import http  # mitmproxy에서 HTTP 흐름을 다루기 위한 ht
 from mitmproxy.options import Options  # mitmproxy 설정을 위한 Options 클래스 임포트
 from mitmproxy.tools.dump import DumpMaster  # mitmproxy의 DumpMaster 클래스를 통해 프록시 서버 시작
 
-# 차단 도메인 목록
+# Blocked domain list
 BLOCKED_DOMAINS = ["example.com", "www.google.com"]
 
-# 도메인을 차단하는 클래스 정의
+# Defining a class that blocks domains
 class DomainBlocker:
-   # HTTP 요청을 가로챈 경우 request에 콜백이 발생
+   # If an HTTP request is intercepted, a callback is generated for the request.
    def request(self, flow: http.HTTPFlow) -> None:
        host = flow.request.pretty_host  # 요청된 호스트 이름(도메인)을 가져옴
        if host in BLOCKED_DOMAINS:  # 요청된 도메인이 차단 목록에 있으면

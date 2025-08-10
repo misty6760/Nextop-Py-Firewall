@@ -10,7 +10,7 @@ dependencies = [
     "pydivert>=2.1.0",
     "python-dotenv>=1.1.1",
     "requests>=2.32.4",
-    "ruff>=0.12.1",
+    "ruff>=0.12.5",
     "scapy>=2.6.1",
-    "textual>=3.5.0",
+    "textual>=5.0.1",
 ]

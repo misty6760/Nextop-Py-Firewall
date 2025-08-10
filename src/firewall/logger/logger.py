@@ -1,3 +1,6 @@
+import json
+from dataclasses import asdict
+
 from src.firewall.logger.log_models import Log
 from src.firewall.logger.loki import Loki
 
@@ -22,15 +25,15 @@ class Logger:
 
     def http(self, http: Log):
         labels = self.get_labels(http, log_level="http")
-        self.send_log(labels, str(http))
+        self.send_log(labels, json.dumps(asdict(http)))
 
     def packet(self, packet: Log):
         labels = self.get_labels(packet, log_level="packet")
-        self.send_log(labels, str(packet))
+        self.send_log(labels, json.dumps(asdict(packet)))
 
     def block(self, packet: Log):
         labels = self.get_labels(packet, log_level="block")
-        self.send_log(labels, str(packet))
+        self.send_log(labels, json.dumps(asdict(packet)))
 
     def policy(self, message: str):
         labels = {"log_type": "config", "level": "policy"}
