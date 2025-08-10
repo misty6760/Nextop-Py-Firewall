@@ -290,3 +290,4 @@ pyrightconfig.json
 
 
 loki/loki/*
+loki/*.exe
