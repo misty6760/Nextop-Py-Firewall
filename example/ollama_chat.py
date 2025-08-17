@@ -2,6 +2,7 @@ import ollama
 
 response = ollama.chat(
     model = "gemma3:1b",
+    options = {"temperature": 0, "top_p": 1},
     messages =[
         {
             "role": "system",
@@ -9,7 +10,7 @@ response = ollama.chat(
         },
         {
             "role": "user",
-            "content": "뭐하니?"
+            "content": "파이썬에서 리스트를 정렬하는 법을 하나만 알려줘"
         },
     ],
 )
