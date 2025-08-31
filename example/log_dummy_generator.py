@@ -1,12 +1,9 @@
 import asyncio
 import random
-import time
 import uuid
-import json
 import datetime
 from dataclasses import asdict
 
-import requests
 
 from src.common.id_utils import generate_log_id
 from src.firewall import config
@@ -309,7 +306,6 @@ async def send_bulk_logs_async(count: int = 100000):
 
 
 import json
-import time
 import requests
 
 

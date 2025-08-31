@@ -1,5 +1,4 @@
 import json
-import pprint
 from dataclasses import asdict
 
 from src.firewall.policy.policy_models import HttpPolicy
